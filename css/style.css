@@ -1,510 +1,565 @@
-/* ----------------- ПОДКЛЮЧЕНИЕ ШРИФТОВ ----------------- */
-@font-face {
-  font-family: 'Gilroy';
-  src: url('../fonts/Gilroy-Regular.woff2') format('woff2');
-}
+/* СБРОС / БАЗА */
 
-@font-face {
-  font-family: 'EtudeNeuer';
-  src: url('../fonts/EtudeNeuer-Regular.woff2') format('woff2');
-}
-
-/* ----------------- BASE ----------------- */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+html,
+body {
   margin: 0;
   padding: 0;
 }
 
 body {
-  background: #000;
-  color: #fff;
-  font-family: 'Gilroy', sans-serif;
-  overflow-x: hidden;
+  font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #000000;
+  color: #f5f5f5;
 }
 
 img {
-  display: block;
   max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .container {
   width: min(1200px, 100% - 32px);
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
-.highlight {
-  font-family: 'EtudeNeuer';
-  color: #5BB9CD;
-}
+/* HEADER */
 
-.highlight-inline {
-  font-family: 'EtudeNeuer';
-  color: #5BB9CD;
-}
-
-/* ----------------- TOP MENU ----------------- */
-.topmenu {
+.header {
   position: fixed;
+  inset-inline: 0;
   top: 0;
-  left: 0;
-  width: 100%;
-  padding: 18px 0;
-  background: #000;
-  z-index: 1000;
-  text-align: center;
+  z-index: 100;
+  background: #000000;
 }
 
-.topmenu__nav {
+.header__inner {
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 50px;
+  padding-block: 14px;
+  position: relative;
 }
 
-.topmenu a {
-  color: #ffffff;
+.header__logo {
+  display: none; /* скрываем текст RAIM AGENCY */
+}
+
+.header__nav {
+  display: flex;
+  gap: 32px;
+  font-size: 12px;
   text-transform: uppercase;
-  font-size: 14px;
   letter-spacing: 0.18em;
-  opacity: 0.9;
-  text-decoration: none;
 }
 
-.topmenu a:hover {
-  opacity: 1;
+.header__link {
+  position: relative;
 }
 
-/* ----------------- HERO ----------------- */
+.header__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: #5bd4e4;
+  transition: width 0.2s ease;
+}
+
+.header__link:hover::after {
+  width: 100%;
+}
+
+.header__toggle {
+  display: none;
+}
+
+.header__burger {
+  display: none;
+  width: 24px;
+  height: 18px;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+}
+
+.header__burger span {
+  height: 2px;
+  width: 100%;
+  background: #ffffff;
+}
+
+/* HERO */
+
 .hero {
-  margin-top: 86px; /* под фиксированное меню */
-  text-align: center;
+  padding-top: 80px; /* под высоту шапки */
+  background: #000000;
 }
 
-.hero__img {
-  width: 1200px;
+.hero__image-wrap {
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-/* ----------------- MODELS ----------------- */
+.hero__image-wrap img {
+  width: 100%;
+  height: auto;
+}
+
+/* MODELS */
+
 .models {
-  margin-top: 72px;
+  padding-block: 40px 64px;
+  background: #000000;
+}
+
+.models__head {
   text-align: center;
 }
 
 .models__tabs {
-  display: flex;
-  justify-content: space-between;
+  display: inline-flex;
   align-items: center;
-  gap: 20px;
-  text-transform: uppercase;
+  gap: 32px;
   font-size: 12px;
   letter-spacing: 0.18em;
-  margin-bottom: 10px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
 .models__tab {
-  flex: 1;
-  color: #ffffff;
+  opacity: 0.6;
 }
 
-.models__tab-main {
-  font-family: 'EtudeNeuer';
-  color: #5BB9CD;
-}
-
-.models__tab--left {
-  text-align: left;
-}
-
-.models__tab--center {
-  text-align: center;
-}
-
-.models__tab--right {
-  text-align: right;
+.models__tab--active {
+  opacity: 1;
 }
 
 .models__title {
-  margin-top: 8px;
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-}
-
-.models__title-accent {
-  font-family: 'EtudeNeuer';
-  color: #5BB9CD;
-  font-size: 22px;
-}
-
-.models__title-rest {
-  font-size: 16px;
-}
-
-.models__image-wrap {
-  width: 1200px;
-  margin: 0 auto;
-}
-
-.models__img {
-  width: 1200px;
-  margin: 0 auto;
-}
-
-.models__cta {
-  margin-top: 18px;
-  font-size: 12px;
+  font-size: 18px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
-.models__cta-accent {
-  font-family: 'EtudeNeuer';
-  color: #5BB9CD;
+.models__image-wrapper {
+  margin-top: 24px;
 }
 
-/* ----------------- CASTING (БЛОК 3) ----------------- */
+.models__image {
+  width: 100%;
+  height: auto;
+}
+
+/* CASTING (3 блок + форма) */
+
 .casting {
-  margin-top: 80px;
+  background: #000000;
 }
 
-.casting__wrap {
-  width: 1200px;
+/* верхняя кнопка "записаться на кастинг" */
+.casting__cta {
+  padding-top: 16px;
+  padding-bottom: 24px;
+}
+
+.casting__cta-btn {
   margin: 0 auto;
-  position: relative;
-}
-
-.casting__bg {
-  width: 1200px;
-  display: block;
-}
-
-.casting__content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-
-.casting__text {
-  width: 615px;
-  font-family: 'Gilroy';
-  font-weight: 300;
-  font-size: 28px;
-  line-height: 100%;
-  color: #E5E5E5;
-  margin-left: 136px;
-  margin-top: -40px;
-}
-
-.casting__brand {
-  font-family: 'EtudeNeuer';
-  font-weight: 400;
-  font-size: 28px;
-  color: #5BB9CD;
-}
-
-/* ----------------- FORM (БЛОК 4) ----------------- */
-.formblock {
-  margin-top: 96px;
-  text-align: center;
-}
-
-.form {
-  width: 560px;
-  max-width: 100%;
-  margin: 0 auto;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
-  gap: 22px;
-}
-
-.field {
-  text-align: left;
-  letter-spacing: 0.18em;
-  font-size: 12px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 16px 48px;
+  border-radius: 0;
+  border: 1px solid #ffffff;
+  background: transparent;
+  color: #ffffff;
+  font-size: 16px;
   text-transform: uppercase;
+  letter-spacing: 0.18em;
+  cursor: pointer;
 }
 
-.field span {
-  display: block;
-  margin-bottom: 6px;
-}
-
-.field input {
-  width: 100%;
-  padding: 16px 20px;
-  background: transparent;
-  border: 2px solid #ffffff;
-  color: #ffffff;
-  font-size: 15px;
-}
-
-.phone {
-  display: flex;
-  border: 2px solid #ffffff;
-}
-
-.pfx {
-  padding: 16px 18px;
-  border-right: 2px solid #ffffff;
-  font-size: 15px;
-}
-
-.phone input {
-  flex: 1;
-  border: none;
-  padding: 16px 20px;
-  background: transparent;
-  color: #ffffff;
-}
-
-.check {
-  font-size: 12px;
-  display: flex;
-  gap: 8px;
-  align-items: flex-start;
+.casting__cta-btn span {
   line-height: 1.4;
 }
 
-.check input {
+.casting__cta-accent {
+  color: #5bd4e4;
+}
+
+/* фон + текст */
+.casting__hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.casting__hero-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.casting__hero-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 620px;
+  padding-inline: 64px;
+}
+
+.casting__hero-content p {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #ffffff; /* ВСЁ белое, включая RAIM */
+}
+
+.casting__hero-label {
+  position: absolute;
+  right: 6%;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center;
+  font-size: 52px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+/* нижняя часть — чёрный прямоугольник с формой */
+.casting__form-wrap {
+  background: #000000;
+  padding-block: 40px 60px;
+}
+
+.casting__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 520px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.field input {
+  padding: 12px 14px;
+  border-radius: 0;
+  border: 1px solid #f5f5f5;
+  background: transparent;
+  color: #f5f5f5;
+  font-size: 13px;
+}
+
+.field__phone {
+  display: flex;
+  align-items: center;
+  border: 1px solid #f5f5f5;
+}
+
+.field__phone-prefix {
+  padding: 12px 10px 12px 14px;
+  font-size: 13px;
+  border-right: 1px solid #f5f5f5;
+}
+
+.field__phone input {
+  border: none;
+  padding: 12px 14px;
+  flex: 1;
+}
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.checkbox input {
   margin-top: 3px;
 }
 
 .btn {
-  margin-top: 6px;
-  padding: 16px 20px;
-  background: #ffffff;
-  color: #000000;
-  text-transform: uppercase;
-  font-family: 'Gilroy';
-  letter-spacing: 0.18em;
-  font-weight: 600;
-  cursor: pointer;
+  margin-top: 8px;
+  padding: 12px 20px;
   border: none;
+  border-radius: 0;
+  background: #f5f5f5;
+  color: #000000;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 .btn:hover {
-  background: #e6e6e6;
+  background: #dadada;
 }
 
-/* ----------------- ABOUT (БЛОК 5) ----------------- */
+/* ABOUT */
+
 .about {
-  margin-top: 120px;
-  color: #C7D4D6;
+  padding-block: 72px;
+  background: #000000;
 }
 
-.about__wrap {
-  width: 1200px;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.row {
+.about__inner {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 40px;
-  margin-bottom: 60px;
 }
 
-.row--img-left img {
-  order: 1;
-}
-
-.row--img-left .row__text {
-  order: 2;
-}
-
-.row--text-left img {
-  order: 2;
-}
-
-.row--text-left .row__text {
-  order: 1;
-}
-
-.row__img {
-  width: 340px;
-  height: auto;
-  border-radius: 14px;
-}
-
-.row__img--small {
-  width: 300px;
-}
-
-.row__text {
-  flex: 1;
-}
-
-.row__title {
-  font-family: 'EtudeNeuer';
-  font-size: 28px;
-  color: #5BB9CD;
-  margin-bottom: 16px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.row__subtitle {
-  margin-top: 4px;
-  font-family: 'EtudeNeuer';
-  font-size: 18px;
-  color: #5BB9CD;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.row__num {
-  font-size: 12px;
-  opacity: 0.6;
-  margin-bottom: 6px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.row__p {
-  font-size: 15px;
-  line-height: 1.6;
-  color: #E5F2F4;
-}
-
-/* ----------------- FOOTER ----------------- */
-.footer {
-  margin-top: 120px;
-  padding: 60px 0 70px;
-  background: #284A4F;
-}
-
-.footer__inner {
-  display: flex;
-  justify-content: space-between;
+/* верх: большая фотка + текст */
+.about__top {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
   gap: 40px;
   align-items: flex-start;
 }
 
-.footer__logo {
+.about__image-main img {
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+.about__title {
+  font-size: 20px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.about__text {
+  font-size: 14px;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+.about__text-accent {
+  color: #5bd4e4;
+}
+
+/* низ: карточки преимуществ */
+.about__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 40px;
+}
+
+.about-card {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.about-card--right {
+  grid-template-columns: minmax(0, 1fr) 120px;
+}
+
+.about-card--right .about-card__img-wrapper {
+  order: 2;
+}
+
+.about-card--right .about-card__body {
+  order: 1;
+}
+
+.about-card__img-wrapper img {
+  border-radius: 14px;
+  object-fit: cover;
+  height: 160px;
+  width: 100%;
+}
+
+.about-card__label {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 4px;
+}
+
+.about-card__title {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 6px;
+}
+
+.about-card__title-accent {
+  color: #5bd4e4;
+}
+
+.about-card p {
+  font-size: 13px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* FOOTER */
+
+.footer {
+  background: #000000;
+}
+
+.footer__panel {
+  background: #5bb9cd80; /* цвет из макета */
+  padding-block: 32px 40px;
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr) 1.2fr;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.footer__logo-box {
   width: 80px;
   margin-bottom: 20px;
 }
 
 .footer__menu {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  text-transform: uppercase;
+  flex-direction: row;
+  gap: 32px;
   font-size: 12px;
   letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 .footer__center {
   text-align: left;
 }
 
-.footer__title {
-  font-family: 'EtudeNeuer';
-  color: #5BB9CD;
-  font-size: 32px;
+.footer__heading-large {
+  font-size: 64px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
+  margin-bottom: 18px;
 }
 
-.footer__addr {
-  margin-top: 10px;
+.footer__city {
+  font-size: 13px;
   line-height: 1.6;
-  font-size: 14px;
 }
 
 .footer__right {
   display: flex;
-  gap: 40px;
-  font-size: 14px;
+  gap: 32px;
+  font-size: 13px;
 }
 
-.footer__col h4 {
-  font-size: 12px;
+.footer__heading {
+  font-size: 11px;
   text-transform: uppercase;
-  margin-bottom: 6px;
   letter-spacing: 0.18em;
+  margin-bottom: 6px;
 }
 
 .footer__col p {
   margin: 2px 0;
 }
 
-/* ----------------- ADAPTIVE ----------------- */
-@media (max-width: 1260px) {
-  .hero__img,
-  .models__img,
-  .models__image-wrap,
-  .casting__wrap,
-  .casting__bg,
-  .about__wrap {
-    width: 100%;
-  }
-}
+/* RESPONSIVE */
 
 @media (max-width: 900px) {
-  .row {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .row__img {
-    width: 100%;
-    max-width: 360px;
-    margin: 0 auto;
-  }
-
-  .casting__content {
+  .casting__hero-content {
     position: static;
-    padding: 32px 24px 40px;
+    padding-inline: 16px;
+    padding-block: 24px 28px;
   }
 
-  .casting__wrap {
-    position: static;
+  .casting__hero-label {
+    display: none;
   }
 
-  .casting__bg {
-    width: 100%;
+  .about__top {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about__image-main {
+    max-width: 260px;
+  }
+
+  .about__grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .footer__inner {
-    flex-direction: column;
-    gap: 32px;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .footer__right {
     flex-direction: column;
   }
+
+  .footer__heading-large {
+    font-size: 40px;
+  }
 }
 
-@media (max-width: 600px) {
-  .topmenu__nav {
-    gap: 24px;
-    font-size: 11px;
-  }
-
-  .models__tabs {
+@media (max-width: 720px) {
+  .header__nav {
+    position: absolute;
+    right: 16px;
+    top: 100%;
+    margin-top: 6px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.96);
     flex-direction: column;
-    align-items: flex-start;
+    gap: 10px;
+    display: none;
   }
 
-  .models__tab--left,
-  .models__tab--center,
-  .models__tab--right {
-    text-align: left;
+  .header__burger {
+    display: flex;
   }
 
-  .form {
+  .header__toggle:checked ~ .header__nav {
+    display: flex;
+  }
+
+  .casting__cta-btn {
     width: 100%;
+    padding-inline: 16px;
+  }
+}
+
+@media (max-width: 540px) {
+  .container {
+    width: min(100% - 24px, 520px);
+  }
+
+  .footer__heading-large {
+    font-size: 32px;
   }
 }
