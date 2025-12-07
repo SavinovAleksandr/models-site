@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>RAIM — Модельное агентство</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <div class="header__logo">
+        <span class="header__logo-top">МОДЕЛЬНОЕ АГЕНТСТВО · MOSCOW</span>
+        <span class="header__logo-main">RAIM</span>
+      </div>
+
+      <input type="checkbox" id="menu-toggle" class="header__toggle">
+      <label for="menu-toggle" class="header__burger" aria-label="Открыть меню">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="header__nav">
+        <a href="#models" class="header__link">МОДЕЛИ</a>
+        <a href="#about" class="header__link">О НАС</a>
+        <a href="#casting" class="header__link">КАСТИНГИ</a>
+        <a href="#contact" class="header__link">КОНТАКТЫ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="top">
+      <div class="hero__bg">
+        <img src="assets/background.png" alt="" class="hero__bg-img">
+      </div>
+
+      <div class="container hero__inner">
+        <div class="hero__left">
+          <div class="hero__photo-main">
+            <img src="assets/first.png" alt="Модель RAIM">
+          </div>
+        </div>
+        <div class="hero__right">
+          <p class="hero__kicker">(01)</p>
+          <h1 class="hero__title">
+            МОДЕЛЬНОЕ<br>АГЕНТСТВО<br>RAIM ЭТО НОВЫЙ ШАГ В<br>
+            РАЗВИТИИ ИНДУСТРИИ МОДЫ И КРАСОТЫ
+          </h1>
+          <p class="hero__text">
+            Мы предлагаем широкий пакет услуг и возможности развития, а также
+            монетизации творчества для каждой девушки.
+          </p>
+          <div class="hero__mini">
+            <img src="assets/second.png" alt="Модель RAIM">
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__word">
+        <span>R</span><span>A</span><span>I</span><span>M</span>
+      </div>
+    </section>
+
+    <!-- Models -->
+    <section class="models" id="models">
+      <div class="container">
+        <div class="models__head">
+          <div class="models__tabs-line">
+            <span class="models__tab-left">МОДЕЛИ</span>
+            <div class="models__tabs-center">
+              <span>ЖЕНЩИНЫ</span>
+              <span>МУЖЧИНЫ</span>
+            </div>
+          </div>
+          <h2 class="models__title">
+            МОДЕЛИ НАШЕГО АГЕНТСТВА
+          </h2>
+        </div>
+
+        <!-- Вариант как в макете: единое изображение сетки моделей -->
+        <div class="models__image-wrapper">
+          <img src="assets/models.png" alt="Модели агентства RAIM" class="models__image">
+        </div>
+      </div>
+    </section>
+
+    <!-- Casting -->
+    <section class="casting" id="casting">
+      <div class="casting__bg">
+        <img src="assets/third.png" alt="" class="casting__bg-img casting__bg-img_main">
+        <img src="assets/fourth.png" alt="" class="casting__bg-img casting__bg-img_side">
+      </div>
+
+      <div class="container casting__inner">
+        <div class="casting__text">
+          <p class="casting__kicker">
+            Стань моделью уже сегодня вместе с международным модельным агентством RAIM
+          </p>
+          <p class="casting__lead">
+            Мы ведём масштабный набор в модельное агентство. Хочешь стать моделью?
+            Тогда заполняй форму в международное модельное агентство RAIM.
+          </p>
+          <h2 class="casting__title">
+            ЗАПИСАТЬСЯ НА КАСТИНГ<br>
+            В МОДЕЛЬНОЕ АГЕНТСТВО RAIM
+          </h2>
+        </div>
+
+        <form class="casting__form">
+          <input type="text" name="name" placeholder="ИМЯ ФАМИЛИЯ" required>
+          <input type="number" name="age" placeholder="ВОЗРАСТ" required>
+          <input type="text" name="city" placeholder="ГОРОД" required>
+          <div class="casting__phone">
+            <span class="casting__phone-prefix">+7</span>
+            <input type="tel" name="phone" placeholder="НОМЕР ТЕЛЕФОНА" required>
+          </div>
+
+          <label class="casting__checkbox">
+            <input type="checkbox" required>
+            <span>Я ознакомлен(а) и согласен(на) с политикой обработки персональных данных</span>
+          </label>
+
+          <label class="casting__checkbox">
+            <input type="checkbox">
+            <span>Я согласен(на) на получение информационно и рекламной рассылки</span>
+          </label>
+
+          <button type="submit" class="btn">
+            ЗАПИСАТЬСЯ НА КАСТИНГ
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+      <div class="container">
+        <h2 class="section-title">О НАС</h2>
+        <p class="about__lead">
+          Модельное агентство RAIM — это профессиональное агентство, специализирующееся
+          на поиске, подготовке и продвижении моделей для фотосъёмок, показов мод,
+          рекламы и других творческих проектов. Агентство работает с моделями разных
+          возрастов и типов, предоставляя им возможности для международной карьеры.
+        </p>
+
+        <div class="about__grid">
+          <article class="about__item">
+            <div class="about__img-wrap">
+              <img src="assets/1.png" alt="Профессиональный подход">
+            </div>
+            <div class="about__item-content">
+              <h3 class="about__item-kicker">(01)</h3>
+              <h3 class="about__item-title">ПРОФЕССИОНАЛЬНЫЙ ПОДХОД</h3>
+              <p class="about__item-text">
+                RAIM обеспечивает полный цикл услуг: от кастингов и тренировок моделей
+                до организации съёмок и сотрудничества с брендами.
+              </p>
+            </div>
+          </article>
+
+          <article class="about__item">
+            <div class="about__img-wrap">
+              <img src="assets/2.png" alt="Прозрачные условия">
+            </div>
+            <div class="about__item-content">
+              <h3 class="about__item-kicker">(02)</h3>
+              <h3 class="about__item-title">ПРОЗРАЧНЫЕ УСЛОВИЯ СОТРУДНИЧЕСТВА</h3>
+              <p class="about__item-text">
+                Агентство работает по официальным договорам, обеспечивая защиту интересов моделей.
+              </p>
+            </div>
+          </article>
+
+          <article class="about__item">
+            <div class="about__img-wrap">
+              <img src="assets/3.png" alt="Профессиональный подход">
+            </div>
+            <div class="about__item-content">
+              <h3 class="about__item-kicker">(03)</h3>
+              <h3 class="about__item-title">ПРОФЕССИОНАЛЬНЫЙ ПОДХОД</h3>
+              <p class="about__item-text">
+                RAIM обеспечивает полный цикл услуг: от кастингов и тренировок моделей
+                до организации съёмок и сотрудничества с брендами.
+              </p>
+            </div>
+          </article>
+
+          <article class="about__item">
+            <div class="about__img-wrap">
+              <img src="assets/fivth.png" alt="Профессиональный подход">
+            </div>
+            <div class="about__item-content">
+              <h3 class="about__item-kicker">(04)</h3>
+              <h3 class="about__item-title">ПРОФЕССИОНАЛЬНЫЙ ПОДХОД</h3>
+              <p class="about__item-text">
+                RAIM обеспечивает полный цикл услуг: от кастингов и тренировок моделей
+                до организации съёмок и сотрудничества с брендами.
+              </p>
+            </div>
+          </article>
+
+          <article class="about__item">
+            <div class="about__img-wrap">
+              <img src="assets/sixth.png" alt="Поддержка и развитие моделей">
+            </div>
+            <div class="about__item-content">
+              <h3 class="about__item-kicker">(05)</h3>
+              <h3 class="about__item-title">ПОДДЕРЖКА И РАЗВИТИЕ МОДЕЛЕЙ</h3>
+              <p class="about__item-text">
+                RAIM предлагает обучение основам манекенщицы, развитие навыков дефиле,
+                фотопозирования и построения имиджа.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+      <div class="container contact__inner">
+        <div class="contact__left">
+          <div class="contact__logo">
+            <img src="assets/logo.png" alt="RAIM логотип">
+          </div>
+          <nav class="contact__nav">
+            <a href="#models">МОДЕЛИ</a>
+            <a href="#about">О НАС</a>
+            <a href="#casting">КАСТИНГИ</a>
+          </nav>
+        </div>
+
+        <div class="contact__right">
+          <h2 class="contact__title">CONTACT</h2>
+          <p class="contact__city">МОСКВА</p>
+          <p class="contact__address">МАРКСИСТСКАЯ 34 КОРП 4</p>
+
+          <div class="contact__rows">
+            <div class="contact__row">
+              <span class="contact__label">ЗАПИСАТЬСЯ НА КАСТИНГ:</span>
+              <a href="tel:+79646812857" class="contact__value">8 (964) 681-28-57</a>
+            </div>
+            <div class="contact__row">
+              <span class="contact__label">СВЯЗАТЬСЯ ПО ПОВОДУ СОТРУДНИЧЕСТВА:</span>
+              <a href="tel:+74347649462" class="contact__value">8 (434) 764-94-62</a>
+            </div>
+            <div class="contact__row">
+              <span class="contact__label">E-MAIL:</span>
+              <a href="mailto:RAIM@MAIL.RU" class="contact__value">RAIM@MAIL.RU</a>
+            </div>
+            <div class="contact__row">
+              <span class="contact__label">TG:</span>
+              <span class="contact__value">RAIM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
