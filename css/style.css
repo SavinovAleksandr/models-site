@@ -1,4 +1,4 @@
-/* СБРОС / БАЗА */
+/* RESET / BASE */
 
 *,
 *::before,
@@ -14,8 +14,9 @@ body {
 
 body {
   font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: #000000;
+  background-color: #000;
   color: #f5f5f5;
+  overflow-x: hidden;
 }
 
 img {
@@ -33,21 +34,23 @@ a {
   margin-inline: auto;
 }
 
-/* HEADER */
+
+/* ---------------- HEADER ---------------- */
 
 .header {
   position: fixed;
   inset-inline: 0;
   top: 0;
   z-index: 100;
-  background: #000000;
+  background: #000;
+  padding-top: 10px;
 }
 
 .header__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-block: 14px;
+  padding-block: 10px;
 }
 
 .header__logo-top {
@@ -66,6 +69,12 @@ a {
 
 .header__link {
   position: relative;
+  opacity: 0.85;
+  transition: 0.2s ease;
+}
+
+.header__link:hover {
+  opacity: 1;
 }
 
 .header__link::after {
@@ -83,30 +92,12 @@ a {
   width: 100%;
 }
 
-.header__toggle {
-  display: none;
-}
 
-.header__burger {
-  display: none;
-  width: 24px;
-  height: 18px;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.header__burger span {
-  height: 2px;
-  width: 100%;
-  background: #ffffff;
-}
-
-/* HERO */
+/* ---------------- HERO ---------------- */
 
 .hero {
-  padding-top: 80px; /* под высоту шапки */
-  background: #000000;
+  padding-top: 120px;  /* фикс — чтобы блок не упирался в самый верх */
+  background: #000;
 }
 
 .hero__image-wrap {
@@ -119,11 +110,12 @@ a {
   height: auto;
 }
 
-/* MODELS */
+
+/* ---------------- MODELS ---------------- */
 
 .models {
   padding-block: 40px 64px;
-  background: #000000;
+  background: #000;
 }
 
 .models__head {
@@ -132,7 +124,6 @@ a {
 
 .models__tabs {
   display: inline-flex;
-  align-items: center;
   gap: 32px;
   font-size: 12px;
   letter-spacing: 0.18em;
@@ -163,13 +154,13 @@ a {
   height: auto;
 }
 
-/* CASTING */
+
+/* ---------------- CASTING ---------------- */
 
 .casting {
-  background: #000000;
+  background: #000;
 }
 
-/* верхняя часть с фоном */
 .casting__top {
   position: relative;
   overflow: hidden;
@@ -188,19 +179,19 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 600px;
+  max-width: 620px;
   padding-inline: 64px;
 }
 
 .casting__overline {
-  font-size: 12px;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   margin-bottom: 12px;
 }
 
 .casting__title {
-  font-size: 26px;
+  font-size: 28px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   line-height: 1.45;
@@ -208,13 +199,13 @@ a {
 }
 
 .casting__lead {
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: 15px;
+  line-height: 1.65;
   margin-bottom: 24px;
 }
 
 .casting__subtitle {
-  font-size: 13px;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.16em;
   margin-bottom: 4px;
@@ -227,75 +218,80 @@ a {
   opacity: 0.8;
 }
 
-/* нижняя часть — чёрный прямоугольник с формой */
+
+/* ---- FORM PART ---- */
+
 .casting__form-wrap {
-  background: #000000;
-  padding-block: 40px 60px;
+  background: #000;
+  padding-block: 60px 80px;
 }
 
 .casting__form {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  max-width: 520px;
+  gap: 22px;  /* больше воздуха */
+  max-width: 580px; /* шире форма */
+  margin-top: 20px;
 }
+
+/* увеличенные поля */
 
 .field {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  font-size: 11px;
+  gap: 8px;
+  font-size: 13px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
 .field input {
-  padding: 10px 12px;
+  padding: 16px 18px;         /* было 10px — теперь крупнее */
   border-radius: 0;
-  border: 1px solid #f5f5f5;
+  border: 1.6px solid #f5f5f5;
   background: transparent;
   color: #f5f5f5;
-  font-size: 13px;
+  font-size: 15px;            /* увеличен текст поля */
 }
 
 .field__phone {
   display: flex;
   align-items: center;
-  border: 1px solid #f5f5f5;
+  border: 1.6px solid #f5f5f5;
 }
 
 .field__phone-prefix {
-  padding: 10px 10px 10px 12px;
-  font-size: 13px;
-  border-right: 1px solid #f5f5f5;
+  padding: 16px 14px 16px 18px;
+  font-size: 15px;
+  border-right: 1.6px solid #f5f5f5;
 }
 
 .field__phone input {
   border: none;
-  padding: 10px 12px;
+  padding: 16px 18px;
   flex: 1;
+  font-size: 15px;
 }
 
 .checkbox {
   display: flex;
   align-items: flex-start;
-  gap: 8px;
-  font-size: 11px;
-  line-height: 1.4;
+  gap: 10px;
+  font-size: 13px;
+  line-height: 1.45;
 }
 
 .checkbox input {
-  margin-top: 3px;
+  margin-top: 4px;
 }
 
 .btn {
-  margin-top: 8px;
-  padding: 12px 20px;
+  margin-top: 12px;
+  padding: 16px 24px;
   border: none;
-  border-radius: 0;
   background: #f5f5f5;
-  color: #000000;
-  font-size: 12px;
+  color: #000;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -303,28 +299,30 @@ a {
 }
 
 .btn:hover {
-  background: #dadada;
+  background: #dcdcdc;
 }
 
-/* ABOUT */
+
+/* ---------------- ABOUT ---------------- */
 
 .about {
-  padding-block: 72px;
-  background: #000000;
+  padding-block: 80px;
+  background: #000;
 }
 
 .about__inner {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 50px;
 }
 
-/* верх: большая фотка + текст */
+/* top part */
+
 .about__top {
   display: grid;
   grid-template-columns: 260px minmax(0, 1fr);
-  gap: 40px;
-  align-items: flex-start;
+  gap: 48px;
+  align-items: start;
 }
 
 .about__image-main img {
@@ -333,76 +331,79 @@ a {
 }
 
 .about__title {
-  font-size: 20px;
+  font-size: 22px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .about__text {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.7;
   opacity: 0.95;
 }
 
-/* низ: карточки преимуществ */
+
+/* GRID for cards */
+
 .about__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px 40px;
+  gap: 40px 48px;  
 }
 
 .about-card {
   display: grid;
-  grid-template-columns: 120px minmax(0, 1fr);
-  gap: 16px;
-  align-items: flex-start;
+  grid-template-columns: 140px minmax(0, 1fr); /* шире картинка */
+  gap: 22px;
+  align-items: start;
 }
 
 .about-card__img-wrapper img {
   border-radius: 14px;
   object-fit: cover;
-  height: 160px;
+  height: 180px;   /* увеличено под стиль фигмы */
   width: 100%;
 }
 
 .about-card__label {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  opacity: 0.7;
-  margin-bottom: 4px;
-}
-
-.about-card__title {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
+  opacity: 0.75;
   margin-bottom: 6px;
 }
 
-.about-card p {
-  font-size: 13px;
-  line-height: 1.6;
-  opacity: 0.9;
+.about-card__title {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
 }
 
-/* FOOTER */
+.about-card p {
+  font-size: 14px;
+  line-height: 1.55;
+  opacity: 0.92;
+}
+
+
+/* ---------------- FOOTER ---------------- */
 
 .footer {
-  background: #000000;
+  background: #000;
 }
 
 .footer__panel {
   background: #284a4f;
-  padding-block: 32px 40px;
+  padding-block: 40px 48px;
 }
 
 .footer__inner {
   display: grid;
-  grid-template-columns: 200px minmax(0, 1fr) 1.2fr;
-  gap: 32px;
-  align-items: flex-start;
+  grid-template-columns: 220px minmax(0, 1fr) 1.2fr;
+  gap: 40px;
+  align-items: start;
 }
 
 .footer__logo-box {
@@ -413,46 +414,43 @@ a {
 .footer__menu {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-}
-
-.footer__center {
-  text-align: left;
 }
 
 .footer__heading-large {
   font-size: 32px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .footer__city {
-  font-size: 13px;
-  line-height: 1.6;
+  font-size: 14px;
+  line-height: 1.65;
 }
 
 .footer__right {
   display: flex;
-  gap: 24px;
-  font-size: 13px;
+  gap: 30px;
+  font-size: 14px;
 }
 
 .footer__heading {
-  font-size: 11px;
-  text-transform: uppercase;
+  font-size: 12px;
   letter-spacing: 0.18em;
-  margin-bottom: 6px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
 .footer__col p {
   margin: 2px 0;
 }
 
-/* RESPONSIVE */
+
+/* ---------------- RESPONSIVE ---------------- */
 
 @media (max-width: 900px) {
   .casting__content {
@@ -461,33 +459,16 @@ a {
     padding-block: 32px;
   }
 
-  .casting__top {
-    display: grid;
-  }
-
-  .casting__bg {
-    grid-row: 1 / 2;
-  }
-
-  .casting__content {
-    grid-row: 1 / 2;
-    align-self: center;
-  }
-
   .about__top {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .about__image-main {
-    max-width: 260px;
+    grid-template-columns: 1fr;
   }
 
   .about__grid {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .footer__inner {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .footer__right {
@@ -497,42 +478,25 @@ a {
 
 @media (max-width: 720px) {
   .header__nav {
-    position: absolute;
-    right: 16px;
-    top: 100%;
-    margin-top: 6px;
-    padding: 12px 16px;
-    border-radius: 12px;
-    background: rgba(0, 0, 0, 0.96);
-    flex-direction: column;
-    gap: 10px;
     display: none;
   }
 
-  .header__burger {
-    display: flex;
-  }
-
-  .header__toggle:checked ~ .header__nav {
-    display: flex;
-  }
-
-  .casting__content {
-    padding-block: 24px 32px;
-  }
-
   .casting__title {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .casting__form-wrap {
-    padding-block: 32px 48px;
+    padding-block: 36px 52px;
+  }
+
+  .btn {
+    padding: 14px 20px;
   }
 }
 
 @media (max-width: 540px) {
   .container {
-    width: min(100% - 24px, 520px);
+    width: min(100% - 20px, 520px);
   }
 
   .footer__heading-large {

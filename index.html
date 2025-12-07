@@ -7,18 +7,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
-  <!-- ШАПКА -->
+
+  <!-- HEADER -->
   <header class="header">
     <div class="container header__inner">
+
       <div class="header__logo">
         <span class="header__logo-top">RAIM AGENCY</span>
       </div>
-
-      <input type="checkbox" id="menu-toggle" class="header__toggle">
-      <label for="menu-toggle" class="header__burger" aria-label="Открыть меню">
-        <span></span><span></span><span></span>
-      </label>
 
       <nav class="header__nav">
         <a href="#models" class="header__link">МОДЕЛИ</a>
@@ -26,19 +24,20 @@
         <a href="#casting" class="header__link">КАСТИНГИ</a>
         <a href="#contact" class="header__link">КОНТАКТЫ</a>
       </nav>
+
     </div>
   </header>
 
   <main>
-    <!-- HERO: верхний блок 1 block из Figma -->
+
+    <!-- HERO BLOCK -->
     <section class="hero" id="top">
       <div class="hero__image-wrap">
-        <!-- экспорт 1 block из Figma -->
-        <img src="assets/1%20block.svg" alt="RAIM — модельное агентство" />
+        <img src="assets/1 block.svg" alt="RAIM — модельное агентство" />
       </div>
     </section>
 
-    <!-- МОДЕЛИ -->
+    <!-- MODELS -->
     <section class="models" id="models">
       <div class="container">
         <div class="models__head">
@@ -47,27 +46,29 @@
             <span class="models__tab">ЖЕНЩИНЫ</span>
             <span class="models__tab">МУЖЧИНЫ</span>
           </div>
+
           <h2 class="models__title">МОДЕЛИ НАШЕГО АГЕНТСТВА</h2>
         </div>
 
         <div class="models__image-wrapper">
-          <!-- коллаж models из Figma -->
           <img src="assets/models.png" alt="Модели агентства RAIM" class="models__image" />
         </div>
       </div>
     </section>
 
-    <!-- КАСТИНГ: фон + текст -->
+    <!-- CASTING -->
     <section class="casting" id="casting">
-      <!-- Верхний блок с фоном и текстом -->
+
+      <!-- TOP PART -->
       <div class="casting__top">
         <img src="assets/background.png" alt="Фон кастинга" class="casting__bg" />
 
         <div class="container casting__content">
+
           <p class="casting__overline">(01)</p>
 
           <h2 class="casting__title">
-            МОДЕЛЬНОЕ АГЕНТСТВО RAIM — НОВЫЙ ШАГ<br />
+            МОДЕЛЬНОЕ АГЕНТСТВО RAIM — НОВЫЙ ШАГ<br>
             В РАЗВИТИИ ИНДУСТРИИ МОДЫ И КРАСОТЫ
           </h2>
 
@@ -79,16 +80,20 @@
           <p class="casting__subtitle">
             Стань моделью уже сегодня вместе с международным модельным агентством RAIM
           </p>
+
           <p class="casting__subtitle-small">
             Записаться на кастинг в модельное агентство RAIM
           </p>
+
         </div>
       </div>
 
-      <!-- Низ блока: чёрный прямоугольник с формой -->
+      <!-- FORM PART -->
       <div class="casting__form-wrap">
         <div class="container">
+
           <form class="casting__form">
+
             <label class="field">
               <span>ИМЯ ФАМИЛИЯ</span>
               <input type="text" name="name" />
@@ -119,24 +124,29 @@
 
             <label class="checkbox">
               <input type="checkbox" />
-              <span>Я согласен(а) на получение информационной и рекламной рассылки</span>
+              <span>Я согласен(а) на получение рекламной рассылки</span>
             </label>
 
             <button type="submit" class="btn">ОТПРАВИТЬ ЗАЯВКУ</button>
+
           </form>
+
         </div>
       </div>
+
     </section>
 
-    <!-- О НАС -->
+    <!-- ABOUT -->
     <section class="about" id="about">
       <div class="container about__inner">
-        <!-- Верх: большая фотография + текст -->
+
+        <!-- TOP -->
         <div class="about__top">
+
           <div class="about__image-main">
-            <!-- большая вертикальная фотка из блока О НАС -->
             <img src="assets/first.png" alt="Модель RAIM" />
           </div>
+
           <div class="about__intro">
             <h2 class="about__title">О НАС</h2>
             <p class="about__text">
@@ -147,10 +157,12 @@
               им возможности для международной карьеры.
             </p>
           </div>
+
         </div>
 
-        <!-- Низ: список преимуществ с маленькими фотографиями -->
+        <!-- GRID -->
         <div class="about__grid">
+
           <article class="about-card">
             <div class="about-card__img-wrapper">
               <img src="assets/second.png" alt="Профессиональный подход" />
@@ -167,13 +179,14 @@
 
           <article class="about-card">
             <div class="about-card__img-wrapper">
-              <img src="assets/third.png" alt="Прозрачные условия сотрудничества" />
+              <img src="assets/third.png" alt="Прозрачные условия" />
             </div>
             <div class="about-card__body">
               <div class="about-card__label">(02)</div>
               <h3 class="about-card__title">ПРОЗРАЧНЫЕ УСЛОВИЯ СОТРУДНИЧЕСТВА</h3>
               <p>
-                Агентство работает по официальным договорам, обеспечивая защиту интересов моделей.
+                Агентство работает по официальным договорам, обеспечивая
+                защиту интересов моделей.
               </p>
             </div>
           </article>
@@ -194,7 +207,7 @@
 
           <article class="about-card">
             <div class="about-card__img-wrapper">
-              <img src="assets/sixth.png" alt="Поддержка и развитие моделей" />
+              <img src="assets/sixth.png" alt="Поддержка моделей" />
             </div>
             <div class="about-card__body">
               <div class="about-card__label">(04)</div>
@@ -205,18 +218,23 @@
               </p>
             </div>
           </article>
+
         </div>
+
       </div>
     </section>
 
-    <!-- КОНТАКТЫ / ФУТЕР -->
+    <!-- FOOTER -->
     <footer class="footer" id="contact">
+
       <div class="footer__panel">
         <div class="container footer__inner">
+
           <div class="footer__left">
             <div class="footer__logo-box">
               <img src="assets/logo.png" alt="RAIM логотип" />
             </div>
+
             <div class="footer__menu">
               <a href="#models">МОДЕЛИ</a>
               <a href="#about">О НАС</a>
@@ -226,27 +244,37 @@
 
           <div class="footer__center">
             <div class="footer__heading-large">CONTACT</div>
-            <p class="footer__city">МАРКСИСТСКАЯ 34 КОРП 4<br>МОСКВА</p>
+            <p class="footer__city">
+              МАРКСИСТСКАЯ 34 КОРП 4<br>МОСКВА
+            </p>
           </div>
 
           <div class="footer__right">
+
             <div class="footer__col">
               <div class="footer__heading">ПОЧТА / TG</div>
               <p>RAIM@MAIL.RU</p>
               <p>TG: RAIM</p>
             </div>
+
             <div class="footer__col">
               <div class="footer__heading">ЗАПИСАТЬСЯ НА КАСТИНГ</div>
               <p>8 (964) 681-28-57</p>
             </div>
+
             <div class="footer__col">
               <div class="footer__heading">СВЯЗАТЬСЯ ПО ПОВОДУ СОТРУДНИЧЕСТВА</div>
               <p>8 (434) 764-94-62</p>
             </div>
+
           </div>
+
         </div>
       </div>
+
     </footer>
+
   </main>
+
 </body>
 </html>
