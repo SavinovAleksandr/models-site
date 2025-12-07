@@ -48,6 +48,17 @@ a {
   padding-block: 14px;
 }
 
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header__logo-img {
+  width: 40px;
+  height: auto;
+}
+
 .header__logo-top {
   font-size: 14px;
   letter-spacing: 0.32em;
