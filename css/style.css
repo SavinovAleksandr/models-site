@@ -3,221 +3,512 @@
   font-family: 'Gilroy';
   src: url('../fonts/Gilroy-Regular.woff2') format('woff2');
 }
+
 @font-face {
   font-family: 'EtudeNeuer';
   src: url('../fonts/EtudeNeuer-Regular.woff2') format('woff2');
 }
 
 /* ----------------- BASE ----------------- */
-*{box-sizing:border-box;margin:0;padding:0;}
-body{background:#000;color:#fff;font-family:'Gilroy',sans-serif;overflow-x:hidden;}
-img{display:block;max-width:100%;}
-.container{width:min(1200px,100% - 32px);margin:auto;}
-.highlight{font-family:'EtudeNeuer';color:#5BB9CD;}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #000;
+  color: #fff;
+  font-family: 'Gilroy', sans-serif;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  width: min(1200px, 100% - 32px);
+  margin: 0 auto;
+}
+
+.highlight {
+  font-family: 'EtudeNeuer';
+  color: #5BB9CD;
+}
+
+.highlight-inline {
+  font-family: 'EtudeNeuer';
+  color: #5BB9CD;
+}
 
 /* ----------------- TOP MENU ----------------- */
-.topmenu{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-padding:20px 0;
-background:#000;
-z-index:1000;
-text-align:center;
+.topmenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 18px 0;
+  background: #000;
+  z-index: 1000;
+  text-align: center;
 }
-.topmenu nav{
-display:flex;
-justify-content:center;
-gap:50px;
+
+.topmenu__nav {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
 }
-.topmenu a{
-color:#fff;
-text-transform:uppercase;
-font-size:14px;
-letter-spacing:0.18em;
-opacity:0.9;
+
+.topmenu a {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  opacity: 0.9;
+  text-decoration: none;
 }
-.topmenu a:hover{opacity:1;}
+
+.topmenu a:hover {
+  opacity: 1;
+}
 
 /* ----------------- HERO ----------------- */
-.hero{margin-top:90px;text-align:center;}
-.hero__img{width:1200px;margin:auto;}
+.hero {
+  margin-top: 86px; /* под фиксированное меню */
+  text-align: center;
+}
+
+.hero__img {
+  width: 1200px;
+  margin: 0 auto;
+}
 
 /* ----------------- MODELS ----------------- */
-.models{text-align:center;margin-top:80px;}
-.models__tabs{
-display:flex;
-justify-content:center;
-gap:40px;
-margin-bottom:18px;
-text-transform:uppercase;
-font-size:14px;
-}
-.models__tabs span{opacity:.7;}
-.models__tabs .highlight{opacity:1;}
-.models__title{
-font-size:22px;
-text-transform:uppercase;
-margin-bottom:20px;
-}
-.models__img{width:1200px;margin:auto;}
-
-/* ----------------- CASTING ----------------- */
-.casting{margin-top:100px;}
-.casting__wrap{
-width:1200px;
-margin:auto;
-position:relative;
-}
-.casting__bg{width:1200px;}
-.casting__content{
-position:absolute;
-inset:0;
-padding:80px;
-display:flex;
-flex-direction:column;
-justify-content:center;
-}
-.casting__over{opacity:.6;font-size:14px;letter-spacing:.18em;}
-.casting__sub{
-margin-top:20px;
-color:#5BB9CD;
-font-family:'EtudeNeuer';
-font-size:22px;
-line-height:1.4;
-}
-.casting__lead2{
-margin-top:18px;
-font-size:16px;
-line-height:1.6;
-opacity:.9;
+.models {
+  margin-top: 72px;
+  text-align: center;
 }
 
-/* ----------------- FORM ----------------- */
-.formblock{margin-top:100px;text-align:center;}
-.form{
-width:520px;
-margin:auto;
-display:flex;
-flex-direction:column;
-gap:22px;
+.models__tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  margin-bottom: 10px;
 }
-.field{text-align:left;letter-spacing:.18em;font-size:13px;}
-.field input{
-width:100%;
-padding:16px 20px;
-background:transparent;
-border:2px solid #fff;
-color:#fff;
-font-size:15px;
-}
-.phone{display:flex;border:2px solid #fff;}
-.pfx{
-padding:16px 18px;
-border-right:2px solid #fff;
-}
-.phone input{
-flex:1;
-border:none;
-padding:16px 20px;
-background:transparent;
-color:#fff;
-}
-.check{font-size:12px;display:flex;gap:8px;}
-.btn{
-padding:16px 20px;
-background:#fff;
-color:#000;
-text-transform:uppercase;
-font-family:'Gilroy';
-letter-spacing:.18em;
-font-weight:600;
-cursor:pointer;
-}
-.btn:hover{background:#e6e6e6;}
 
-/* ----------------- ABOUT ----------------- */
-.about{margin-top:120px;color:#5BB9CD;}
-.row{
-display:flex;
-justify-content:space-between;
-gap:40px;
-margin-bottom:60px;
+.models__tab {
+  flex: 1;
+  color: #ffffff;
 }
-.row--img-left img{order:1;}
-.row--img-left .row__text{order:2;}
-.row--text-left img{order:2;}
-.row--text-left .row__text{order:1;}
-.row__img{
-width:340px;
-height:auto;
-border-radius:14px;
+
+.models__tab-main {
+  font-family: 'EtudeNeuer';
+  color: #5BB9CD;
 }
-.row__img--small{width:300px;}
-.row__title{
-font-family:'EtudeNeuer';
-font-size:28px;
-margin-bottom:20px;
+
+.models__tab--left {
+  text-align: left;
 }
-.row__subtitle{
-margin-top:4px;
-font-family:'EtudeNeuer';
-font-size:20px;
+
+.models__tab--center {
+  text-align: center;
 }
-.row__num{
-font-size:12px;
-opacity:.5;
-margin-bottom:6px;
+
+.models__tab--right {
+  text-align: right;
 }
-.row__p{
-font-size:15px;
-line-height:1.6;
+
+.models__title {
+  margin-top: 8px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.models__title-accent {
+  font-family: 'EtudeNeuer';
+  color: #5BB9CD;
+  font-size: 22px;
+}
+
+.models__title-rest {
+  font-size: 16px;
+}
+
+.models__image-wrap {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.models__img {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.models__cta {
+  margin-top: 18px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.models__cta-accent {
+  font-family: 'EtudeNeuer';
+  color: #5BB9CD;
+}
+
+/* ----------------- CASTING (БЛОК 3) ----------------- */
+.casting {
+  margin-top: 80px;
+}
+
+.casting__wrap {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.casting__bg {
+  width: 1200px;
+  display: block;
+}
+
+.casting__content {
+  position: absolute;
+  inset: 0;
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.casting__over {
+  opacity: 0.6;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.casting__sub {
+  margin-top: 20px;
+  color: #5BB9CD;
+  font-family: 'EtudeNeuer';
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.casting__lead2 {
+  margin-top: 18px;
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* ----------------- FORM (БЛОК 4) ----------------- */
+.formblock {
+  margin-top: 96px;
+  text-align: center;
+}
+
+.form {
+  width: 560px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.field {
+  text-align: left;
+  letter-spacing: 0.18em;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.field span {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.field input {
+  width: 100%;
+  padding: 16px 20px;
+  background: transparent;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  font-size: 15px;
+}
+
+.phone {
+  display: flex;
+  border: 2px solid #ffffff;
+}
+
+.pfx {
+  padding: 16px 18px;
+  border-right: 2px solid #ffffff;
+  font-size: 15px;
+}
+
+.phone input {
+  flex: 1;
+  border: none;
+  padding: 16px 20px;
+  background: transparent;
+  color: #ffffff;
+}
+
+.check {
+  font-size: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  line-height: 1.4;
+}
+
+.check input {
+  margin-top: 3px;
+}
+
+.btn {
+  margin-top: 6px;
+  padding: 16px 20px;
+  background: #ffffff;
+  color: #000000;
+  text-transform: uppercase;
+  font-family: 'Gilroy';
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.btn:hover {
+  background: #e6e6e6;
+}
+
+/* ----------------- ABOUT (БЛОК 5) ----------------- */
+.about {
+  margin-top: 120px;
+  color: #C7D4D6;
+}
+
+.about__wrap {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.row--img-left img {
+  order: 1;
+}
+
+.row--img-left .row__text {
+  order: 2;
+}
+
+.row--text-left img {
+  order: 2;
+}
+
+.row--text-left .row__text {
+  order: 1;
+}
+
+.row__img {
+  width: 340px;
+  height: auto;
+  border-radius: 14px;
+}
+
+.row__img--small {
+  width: 300px;
+}
+
+.row__text {
+  flex: 1;
+}
+
+.row__title {
+  font-family: 'EtudeNeuer';
+  font-size: 28px;
+  color: #5BB9CD;
+  margin-bottom: 16px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.row__subtitle {
+  margin-top: 4px;
+  font-family: 'EtudeNeuer';
+  font-size: 18px;
+  color: #5BB9CD;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.row__num {
+  font-size: 12px;
+  opacity: 0.6;
+  margin-bottom: 6px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.row__p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #E5F2F4;
 }
 
 /* ----------------- FOOTER ----------------- */
-.footer{
-margin-top:120px;
-padding:60px 0;
-background:#284A4F;
+.footer {
+  margin-top: 120px;
+  padding: 60px 0 70px;
+  background: #284A4F;
 }
-.footer__inner{
-display:flex;
-justify-content:space-between;
-gap:40px;
-}
-.footer__logo{width:80px;margin-bottom:20px;}
-.footer__menu{
-display:flex;
-flex-direction:column;
-gap:6px;
-text-transform:uppercase;
-font-size:12px;
-letter-spacing:.18em;
-}
-.footer__title{
-font-family:'EtudeNeuer';
-color:#55BB9C;
-font-size:32px;
-}
-.footer__addr{
-margin-top:10px;
-line-height:1.6;
-}
-.footer__right{
-display:flex;
-gap:40px;
-}
-.footer__right h4{
-font-size:12px;
-text-transform:uppercase;
-margin-bottom:6px;
-font-family:'Gilroy';
-}
-.footer__right p{font-size:14px;}
 
-/* ----------------- MOBILE ----------------- */
-@media(max-width:900px){
-.row{flex-direction:column;text-align:center;}
-.row__img{width:100%;max-width:360px;margin:auto;}
+.footer__inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.footer__logo {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+.footer__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+}
+
+.footer__center {
+  text-align: left;
+}
+
+.footer__title {
+  font-family: 'EtudeNeuer';
+  color: #5BB9CD;
+  font-size: 32px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.footer__addr {
+  margin-top: 10px;
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+.footer__right {
+  display: flex;
+  gap: 40px;
+  font-size: 14px;
+}
+
+.footer__col h4 {
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  letter-spacing: 0.18em;
+}
+
+.footer__col p {
+  margin: 2px 0;
+}
+
+/* ----------------- ADAPTIVE ----------------- */
+@media (max-width: 1260px) {
+  .hero__img,
+  .models__img,
+  .models__image-wrap,
+  .casting__wrap,
+  .casting__bg,
+  .about__wrap {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .row__img {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .casting__content {
+    position: static;
+    padding: 32px 24px 40px;
+  }
+
+  .casting__wrap {
+    position: static;
+  }
+
+  .casting__bg {
+    width: 100%;
+  }
+
+  .footer__inner {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .footer__right {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .topmenu__nav {
+    gap: 24px;
+    font-size: 11px;
+  }
+
+  .models__tabs {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .models__tab--left,
+  .models__tab--center,
+  .models__tab--right {
+    text-align: left;
+  }
+
+  .form {
+    width: 100%;
+  }
 }
