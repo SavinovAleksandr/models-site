@@ -1,3 +1,5 @@
+/* СБРОС / БАЗА */
+
 *,
 *::before,
 *::after {
@@ -46,17 +48,6 @@ a {
   align-items: center;
   justify-content: space-between;
   padding-block: 14px;
-}
-
-.header__logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.header__logo-img {
-  width: 40px;
-  height: auto;
 }
 
 .header__logo-top {
@@ -175,58 +166,50 @@ a {
 /* CASTING */
 
 .casting {
-  position: relative;
-  z-index: 1;
-  padding-block: 72px;
   background: #000000;
 }
 
-.casting__bg {
-  position: absolute;
-  inset: 0;
-  opacity: 0.38;
-  pointer-events: none;
-  z-index: 0;        /* фон под контентом */
+/* верхняя часть с фоном */
+.casting__top {
+  position: relative;
+  overflow: hidden;
 }
 
-.casting__bg img {
+.casting__bg {
   width: 100%;
   height: auto;
   display: block;
-  z-index: -1;    /* точно ниже всех элементов */
-  position: relative;
+  filter: brightness(0.85);
 }
 
-.casting__inner {
-  position: relative;
-  z-index: 5;        /* контент над фоном */
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: 56px;
-  align-items: center;
+.casting__content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+  padding-inline: 64px;
 }
 
 .casting__overline {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 .casting__title {
-  font-size: 24px;
+  font-size: 26px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  line-height: 1.5;
-  margin-bottom: 16px;
+  line-height: 1.45;
+  margin-bottom: 18px;
 }
 
 .casting__lead {
   font-size: 14px;
   line-height: 1.7;
-  max-width: 430px;
   margin-bottom: 24px;
 }
 
@@ -242,14 +225,19 @@ a {
   text-transform: uppercase;
   letter-spacing: 0.14em;
   opacity: 0.8;
-  margin-bottom: 24px;
+}
+
+/* нижняя часть — чёрный прямоугольник с формой */
+.casting__form-wrap {
+  background: #000000;
+  padding-block: 40px 60px;
 }
 
 .casting__form {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  max-width: 420px;
+  max-width: 520px;
 }
 
 .field {
@@ -288,10 +276,6 @@ a {
   flex: 1;
 }
 
-.field input::placeholder {
-  color: #777777;
-}
-
 .checkbox {
   display: flex;
   align-items: flex-start;
@@ -322,26 +306,6 @@ a {
   background: #dadada;
 }
 
-/* правая колонка кастинга */
-
-.casting__right {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.casting__cards {
-  max-width: 340px;           /* подогнано под макет */
-  border-radius: 28px;
-  overflow: hidden;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
-}
-
-.casting__cards img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 /* ABOUT */
 
 .about {
@@ -355,10 +319,17 @@ a {
   gap: 40px;
 }
 
-/* верхняя часть */
-
+/* верх: большая фотка + текст */
 .about__top {
-  display: block;
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.about__image-main img {
+  border-radius: 18px;
+  object-fit: cover;
 }
 
 .about__title {
@@ -370,15 +341,11 @@ a {
 
 .about__text {
   font-size: 14px;
-  line-height: 1.6;
+  line-height: 1.7;
+  opacity: 0.95;
 }
 
-.accent {
-  color: #3fd0ff;
-}
-
-/* сетка карточек */
-
+/* низ: карточки преимуществ */
 .about__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -392,8 +359,11 @@ a {
   align-items: flex-start;
 }
 
-.about-card__img-wrapper {
-  max-width: 120px;
+.about-card__img-wrapper img {
+  border-radius: 14px;
+  object-fit: cover;
+  height: 160px;
+  width: 100%;
 }
 
 .about-card__label {
@@ -401,7 +371,7 @@ a {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   opacity: 0.7;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 .about-card__title {
@@ -420,13 +390,17 @@ a {
 /* FOOTER */
 
 .footer {
+  background: #000000;
+}
+
+.footer__panel {
   background: #284a4f;
-  padding-block: 28px 32px;
+  padding-block: 32px 40px;
 }
 
 .footer__inner {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr) 1.2fr;
   gap: 32px;
   align-items: flex-start;
 }
@@ -445,14 +419,30 @@ a {
   text-transform: uppercase;
 }
 
+.footer__center {
+  text-align: left;
+}
+
+.footer__heading-large {
+  font-size: 32px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.footer__city {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
 .footer__right {
   display: flex;
-  gap: 32px;
+  gap: 24px;
   font-size: 13px;
 }
 
 .footer__heading {
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.18em;
   margin-bottom: 6px;
@@ -465,13 +455,31 @@ a {
 /* RESPONSIVE */
 
 @media (max-width: 900px) {
-  .casting__inner {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 40px;
+  .casting__content {
+    position: static;
+    padding-inline: 16px;
+    padding-block: 32px;
   }
 
-  .casting__right {
-    justify-content: center;
+  .casting__top {
+    display: grid;
+  }
+
+  .casting__bg {
+    grid-row: 1 / 2;
+  }
+
+  .casting__content {
+    grid-row: 1 / 2;
+    align-self: center;
+  }
+
+  .about__top {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .about__image-main {
+    max-width: 260px;
   }
 
   .about__grid {
@@ -479,6 +487,10 @@ a {
   }
 
   .footer__inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .footer__right {
     flex-direction: column;
   }
 }
@@ -505,29 +517,25 @@ a {
     display: flex;
   }
 
-  .models {
-    padding-top: 32px;
-  }
-}
-
-@media (max-width: 540px) {
-  .container {
-    width: min(100%, 100% - 24px);
-  }
-
-  .casting {
-    padding-block: 56px;
+  .casting__content {
+    padding-block: 24px 32px;
   }
 
   .casting__title {
     font-size: 20px;
   }
 
-  .casting__cards {
-    max-width: 280px;
+  .casting__form-wrap {
+    padding-block: 32px 48px;
+  }
+}
+
+@media (max-width: 540px) {
+  .container {
+    width: min(100% - 24px, 520px);
   }
 
-  .footer__right {
-    flex-direction: column;
+  .footer__heading-large {
+    font-size: 26px;
   }
 }

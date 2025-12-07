@@ -12,7 +12,6 @@
   <header class="header">
     <div class="container header__inner">
       <div class="header__logo">
-        <img src="assets/logo.png" alt="RAIM логотип" class="header__logo-img" />
         <span class="header__logo-top">RAIM AGENCY</span>
       </div>
 
@@ -31,11 +30,11 @@
   </header>
 
   <main>
-    <!-- HERO: верхний блок -->
+    <!-- HERO: верхний блок 1 block из Figma -->
     <section class="hero" id="top">
       <div class="hero__image-wrap">
-        <!-- Экспорт блока 1 из Figma (SVG / PNG) -->
-        <img src="assets/1-block.svg" alt="RAIM — модельное агентство" />
+        <!-- экспорт 1 block из Figma -->
+        <img src="assets/1%20block.svg" alt="RAIM — модельное агентство" />
       </div>
     </section>
 
@@ -52,21 +51,19 @@
         </div>
 
         <div class="models__image-wrapper">
-          <!-- Общий спрайт моделей из Figma -->
+          <!-- коллаж models из Figma -->
           <img src="assets/models.png" alt="Модели агентства RAIM" class="models__image" />
         </div>
       </div>
     </section>
 
-    <!-- КАСТИНГ / ФОРМА -->
+    <!-- КАСТИНГ: фон + текст -->
     <section class="casting" id="casting">
-      <!-- фоновая картинка блока 3 из Figma -->
-      <div class="casting__bg">
-        <img src="assets/background.png" alt="Фон кастинга" />
-      </div>
+      <!-- Верхний блок с фоном и текстом -->
+      <div class="casting__top">
+        <img src="assets/background.png" alt="Фон кастинга" class="casting__bg" />
 
-      <div class="container casting__inner">
-        <div class="casting__left">
+        <div class="container casting__content">
           <p class="casting__overline">(01)</p>
 
           <h2 class="casting__title">
@@ -85,7 +82,12 @@
           <p class="casting__subtitle-small">
             Записаться на кастинг в модельное агентство RAIM
           </p>
+        </div>
+      </div>
 
+      <!-- Низ блока: чёрный прямоугольник с формой -->
+      <div class="casting__form-wrap">
+        <div class="container">
           <form class="casting__form">
             <label class="field">
               <span>ИМЯ ФАМИЛИЯ</span>
@@ -123,38 +125,35 @@
             <button type="submit" class="btn">ОТПРАВИТЬ ЗАЯВКУ</button>
           </form>
         </div>
-
-        <!-- ПРАВАЯ КОЛОНКА: КОЛЛАЖ ИЗ 3 КАРТОЧЕК -->
-        <div class="casting__right">
-          <!-- Сохранить картинку-коллаж как assets/cards.png -->
-          <div class="casting__cards">
-            <img src="assets/cards.png" alt="Модели RAIM" />
-          </div>
-        </div>
       </div>
     </section>
 
     <!-- О НАС -->
     <section class="about" id="about">
       <div class="container about__inner">
-        <!-- Верхняя часть: текст "О НАС" -->
+        <!-- Верх: большая фотография + текст -->
         <div class="about__top">
+          <div class="about__image-main">
+            <!-- большая вертикальная фотка из блока О НАС -->
+            <img src="assets/first.png" alt="Модель RAIM" />
+          </div>
           <div class="about__intro">
             <h2 class="about__title">О НАС</h2>
             <p class="about__text">
-              Модельное агентство <span class="accent">RAIM</span> — это профессиональное агентство,
-              специализирующееся на поиске, подготовке и продвижении моделей для фотосъёмок,
-              показов мод, рекламы и других творческих проектов. Агентство работает с моделями
-              разных возрастов и типов, предоставляя им возможности для международной карьеры.
+              Модельное агентство RAIM — это профессиональное агентство,
+              специализирующееся на поиске, подготовке и продвижении моделей
+              для фотосъёмок, показов мод, рекламы и других творческих проектов.
+              Агентство работает с моделями разных возрастов и типов, предоставляя
+              им возможности для международной карьеры.
             </p>
           </div>
         </div>
 
-        <!-- Сетка с 6 карточками в последовательности снизу вверх: first, second, third, fourth, fivth, sixth -->
+        <!-- Низ: список преимуществ с маленькими фотографиями -->
         <div class="about__grid">
           <article class="about-card">
             <div class="about-card__img-wrapper">
-              <img src="assets/first.png" alt="Модель RAIM" />
+              <img src="assets/second.png" alt="Профессиональный подход" />
             </div>
             <div class="about-card__body">
               <div class="about-card__label">(01)</div>
@@ -168,24 +167,10 @@
 
           <article class="about-card">
             <div class="about-card__img-wrapper">
-              <img src="assets/second.png" alt="Профессиональный подход" />
-            </div>
-            <div class="about-card__body">
-              <div class="about-card__label">(02)</div>
-              <h3 class="about-card__title">ПРОФЕССИОНАЛЬНЫЙ ПОДХОД</h3>
-              <p>
-                RAIM обеспечивает полный цикл услуг: от кастингов и тренировок моделей
-                до организации съёмок и сотрудничества с брендами.
-              </p>
-            </div>
-          </article>
-
-          <article class="about-card">
-            <div class="about-card__img-wrapper">
               <img src="assets/third.png" alt="Прозрачные условия сотрудничества" />
             </div>
             <div class="about-card__body">
-              <div class="about-card__label">(03)</div>
+              <div class="about-card__label">(02)</div>
               <h3 class="about-card__title">ПРОЗРАЧНЫЕ УСЛОВИЯ СОТРУДНИЧЕСТВА</h3>
               <p>
                 Агентство работает по официальным договорам, обеспечивая защиту интересов моделей.
@@ -195,24 +180,10 @@
 
           <article class="about-card">
             <div class="about-card__img-wrapper">
-              <img src="assets/fourth.png" alt="Профессиональный подход" />
-            </div>
-            <div class="about-card__body">
-              <div class="about-card__label">(04)</div>
-              <h3 class="about-card__title">ПРОФЕССИОНАЛЬНЫЙ ПОДХОД</h3>
-              <p>
-                RAIM обеспечивает полный цикл услуг: от кастингов и тренировок моделей
-                до организации съёмок и сотрудничества с брендами.
-              </p>
-            </div>
-          </article>
-
-          <article class="about-card">
-            <div class="about-card__img-wrapper">
               <img src="assets/fivth.png" alt="Профессиональный подход" />
             </div>
             <div class="about-card__body">
-              <div class="about-card__label">(05)</div>
+              <div class="about-card__label">(03)</div>
               <h3 class="about-card__title">ПРОФЕССИОНАЛЬНЫЙ ПОДХОД</h3>
               <p>
                 RAIM обеспечивает полный цикл услуг: от кастингов и тренировок моделей
@@ -226,7 +197,7 @@
               <img src="assets/sixth.png" alt="Поддержка и развитие моделей" />
             </div>
             <div class="about-card__body">
-              <div class="about-card__label">(06)</div>
+              <div class="about-card__label">(04)</div>
               <h3 class="about-card__title">ПОДДЕРЖКА И РАЗВИТИЕ МОДЕЛЕЙ</h3>
               <p>
                 RAIM предлагает обучение основам манекенщицы, развитие навыков дефиле,
@@ -240,33 +211,38 @@
 
     <!-- КОНТАКТЫ / ФУТЕР -->
     <footer class="footer" id="contact">
-      <div class="container footer__inner">
-        <div class="footer__left">
-          <div class="footer__logo-box">
-            <img src="assets/logo.png" alt="RAIM логотип" />
+      <div class="footer__panel">
+        <div class="container footer__inner">
+          <div class="footer__left">
+            <div class="footer__logo-box">
+              <img src="assets/logo.png" alt="RAIM логотип" />
+            </div>
+            <div class="footer__menu">
+              <a href="#models">МОДЕЛИ</a>
+              <a href="#about">О НАС</a>
+              <a href="#casting">КАСТИНГИ</a>
+            </div>
           </div>
-          <div class="footer__menu">
-            <a href="#models">МОДЕЛИ</a>
-            <a href="#about">О НАС</a>
-            <a href="#casting">КАСТИНГИ</a>
-          </div>
-        </div>
 
-        <div class="footer__right">
-          <div class="footer__col">
-            <div class="footer__heading">CONTACT</div>
-            <p>МОСКВА</p>
-            <p>МАРКСИСТСКАЯ 34 КОРП 4</p>
+          <div class="footer__center">
+            <div class="footer__heading-large">CONTACT</div>
+            <p class="footer__city">МАРКСИСТСКАЯ 34 КОРП 4<br>МОСКВА</p>
           </div>
-          <div class="footer__col">
-            <div class="footer__heading">ТЕЛЕФОН</div>
-            <p>8 (434) 764-94-62</p>
-            <p>8 (964) 681-28-57</p>
-          </div>
-          <div class="footer__col">
-            <div class="footer__heading">ПОЧТА / TG</div>
-            <p>RAIM@MAIL.RU</p>
-            <p>TG: RAIM</p>
+
+          <div class="footer__right">
+            <div class="footer__col">
+              <div class="footer__heading">ПОЧТА / TG</div>
+              <p>RAIM@MAIL.RU</p>
+              <p>TG: RAIM</p>
+            </div>
+            <div class="footer__col">
+              <div class="footer__heading">ЗАПИСАТЬСЯ НА КАСТИНГ</div>
+              <p>8 (964) 681-28-57</p>
+            </div>
+            <div class="footer__col">
+              <div class="footer__heading">СВЯЗАТЬСЯ ПО ПОВОДУ СОТРУДНИЧЕСТВА</div>
+              <p>8 (434) 764-94-62</p>
+            </div>
           </div>
         </div>
       </div>
