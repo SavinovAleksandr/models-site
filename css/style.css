@@ -161,12 +161,12 @@ a {
   height: auto;
 }
 
-/* CASTING */
+/* ----------- CASTING (точное воспроизведение из Figma) ----------- */
 
 .casting {
   position: relative;
-  padding-block: 72px;
-  background: #000000;
+  padding-top: 140px; /* как в макете — отступ до текста */
+  padding-bottom: 120px;
 }
 
 .casting__bg {
@@ -180,14 +180,20 @@ a {
 .casting__bg img {
   width: 100%;
   height: auto;
+  display: block;
 }
 
+/* ЛЕВАЯ колонка — текст */
 .casting__inner {
   position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: 56px;
-  align-items: flex-start;
+  width: min(1200px, 100% - 32px);
+  margin: 0 auto;
+}
+
+.casting__left {
+  position: relative;
+  z-index: 2;
+  max-width: 520px;
 }
 
 .casting__overline {
@@ -304,29 +310,48 @@ a {
   background: #dadada;
 }
 
+/* ПРАВАЯ колонка — плавающие картинки */
 .casting__right {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  align-items: flex-end;
+  position: absolute;
+  top: 120px;   /* точное позиционирование как в Figma */
+  right: 0;
+  width: 500px;
+  height: 700px;
+  pointer-events: none;
 }
 
-.casting__photo {
-  max-width: 210px;
-  border-radius: 18px;
-  overflow: hidden;
+/* БАЗОВЫЕ СТИЛИ ДЛЯ ВСЕХ КАРТИНОК */
+.casting__right .pic {
+  position: absolute;
+  border-radius: 16px;
+  object-fit: cover;
 }
 
-.casting__photo--top {
-  align-self: flex-end;
+/* ▬▬▬ Картинка №1 — (first.png) ▬▬▬ */
+.pic-1 {
+  width: 240px;
+  height: 330px;
+  top: 0px;
+  right: 110px;
+  z-index: 3;
 }
 
-.casting__photo--middle {
-  margin-right: 40px;
+/* ▬▬▬ Картинка №2 — (second.png) ▬▬▬ */
+.pic-2 {
+  width: 200px;
+  height: 240px;
+  top: 210px;
+  right: 40px;
+  z-index: 2;
 }
 
-.casting__photo--bottom {
-  margin-right: 90px;
+/* ▬▬▬ Картинка №3 — (third.png) ▬▬▬ */
+.pic-3 {
+  width: 180px;
+  height: 260px;
+  top: 380px;
+  right: 150px;
+  z-index: 1;
 }
 
 /* ABOUT */
@@ -444,19 +469,31 @@ a {
 /* RESPONSIVE */
 
 @media (max-width: 900px) {
-  .casting__inner {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
   .casting__right {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 20px;
   }
 
-  .casting__photo--middle,
-  .casting__photo--bottom {
-    margin-right: 0;
+  .casting__right .pic {
+    position: relative;
+    top: auto;
+    right: auto;
+  }
+
+  .pic-1,
+  .pic-2,
+  .pic-3 {
+    width: 150px;
+    height: auto;
   }
 
   .about__grid {
